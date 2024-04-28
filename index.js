@@ -17,7 +17,7 @@ const loginController = require("./src/controller/loginController");
 const app = express();
 const PORT = 5000;
 
-// using body parser
+// using body parsertest
 app.use(bodyParser.json());
 
 // Enable CORS
