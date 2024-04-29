@@ -34,7 +34,6 @@ const allowCors = fn => async (req, res) => {
 }
 
 
-module.exports = allowCors(handler)
 // using body parser
 app.use(bodyParser.json());
 app.use(cors());
