@@ -1,5 +1,6 @@
 const express = require("express");
 const axios = require("axios");
+const cors = require("cors")
 
 const bodyParser = require("body-parser");
 
@@ -18,6 +19,8 @@ const PORT = 5000;
 
 // using body parser
 app.use(bodyParser.json());
+app.use(cors());
+app.use(express.json());
 
 // Enable CORS
 app.use((req, res, next) => {
@@ -30,6 +33,8 @@ app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Credentials", "true");
   next();
 });
+
+
 // route handler for login - authenticate customer
 app.post("/login", loginController.authenticateUser);
 
